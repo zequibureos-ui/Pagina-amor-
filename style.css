@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #ff99c8, #ffb6e6, #ffd2fc);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+.card {
+  width: 80%;
+  max-width: 700px;
+  margin: 60px auto;
+  background: white;
+  padding: 35px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px rgba(255, 0, 100, 0.4);
+  text-align: center;
+  animation: fadeIn 2s ease-out;
+}
+
+.title {
+  font-size: 2.4em;
+  color: #ff2e88;
+  text-shadow: 0 0 10px rgba(255, 0, 120, 0.3);
+  animation: popIn 1.4s ease;
+}
+
+.message {
+  white-space: pre-line;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  font-size: 1.15em;
+  color: #333;
+  margin-top: 20px;
+  line-height: 1.45; /* Más compacto */
+  opacity: 0;
+  animation: fadeInText 2s ease forwards 2s;
+}
+
+.cake {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px auto;
+  position: relative;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.cake::before {
+  content: "🎂";
+  font-size: 120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#hearts {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  animation: floatUp linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-130vh) scale(1.4); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
